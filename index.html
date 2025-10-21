@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Ayes ✨</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Background Particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- Main UI -->
+  <div class="ui">
+    <div class="card fade active" id="card">
+      <div class="header">
+        <div class="chibi-img">
+          <img src="yesss.png" alt="Chibi">
+        </div>
+        <div class="meta">
+          <div class="chibi-name">Dear Ayes</div>
+          <div class="chibi-speech" id="chibi-speech">My Beloved</div>
+        </div>
+      </div>
+
+      <div class="main">
+        <h1 id="title">From Amar</h1>
+        <div class="typing" id="text">Mau gw temenin sebentar?</div>
+      </div>
+
+      <div class="choices" id="choices"></div>
+
+      <div class="controls">
+        <button id="restart" class="muted hidden">Mulai Lagi</button>
+      </div>
+    </div>  
+  </div>
+
+  <!-- Multiple Cats -->
+  <div class="cat-container">
+    <div class="cat" id="cat1">
+      <img src="kucing4.png" alt="cat1">
+    </div>
+    <div class="cat" id="cat2">
+      <img src="kucing1.jpg" alt="cat2">
+    </div>
+    <div class="cat" id="cat3">
+      <img src="kucing2.jpeg" alt="cat3">
+    </div>
+    <div class="cat" id="cat4">
+      <img src="kucing3.jpg" alt="cat4">
+    </div>  
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="bg-music" loop></audio>
+  <audio id="click-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+  <audio id="meow-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-cat-meow-1056.mp3"></audio>
+
+  <script src="index.js"></script>
+</body>
+</html>
