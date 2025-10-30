@@ -3,60 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Ayes ✨</title>
+  <title>For You</title>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Background Particles -->
-  <canvas id="particles"></canvas>
-
-  <!-- Main UI -->
-  <div class="ui">
-    <div class="card fade active" id="card">
-      <div class="header">
-        <div class="chibi-img">
-          <img src="yesss.png" alt="Chibi">
-        </div>
-        <div class="meta">
-          <div class="chibi-name">Dear Ayes</div>
-          <div class="chibi-speech" id="chibi-speech">My Beloved</div>
-        </div>
-      </div>
-
-      <div class="main">
-        <h1 id="title">From Amar</h1>
-        <div class="typing" id="text">Mau gw temenin sebentar?</div>
-      </div>
-
-      <div class="choices" id="choices"></div>
-
-      <div class="controls">
-        <button id="restart" class="muted hidden">Mulai Lagi</button>
-      </div>
-    </div>  
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="screen">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <p>Loading sweet moments... ✨</p>
+    </div>
   </div>
 
-  <!-- Multiple Cats -->
-  <div class="cat-container">
-    <div class="cat" id="cat1">
-      <img src="kucing4.png" alt="cat1">
+  <!-- Start Screen -->
+  <div id="start-screen" class="screen active">
+    <div class="start-content">
+      <div class="start-title">
+        <h1>For My Beloved Ayera</h1>
+        <div class="hearts">💖✨🌸</div>
+      </div>
+      
+      <!-- Real Time Clock -->
+      <div class="real-time-clock">
+        <div class="clock" id="clock">00:00:00</div>
+        <div class="clock-quote">Thinking of you every second 💭</div>
+      </div>
+
+      <div class="start-options">
+        <button id="btn-motivation" class="start-btn">💪 Penyemangat</button>
+        <button id="btn-sweet" class="start-btn">💌 Quiz</button>
+        <button id="btn-surprise" class="start-btn">🎁 Surprise Message</button>
+      </div>
+
+      <!-- Slider How Much You Miss Me -->
+      <div class="miss-slider-container">
+        <h3>How much do you miss me? 💭</h3>
+        <div class="slider-wrapper">
+          <input type="range" min="0" max="100" value="50" class="miss-slider" id="missSlider">
+          <div class="slider-value" id="sliderValue">A little 💭</div>
+        </div>
+      </div>
+
+      <div class="random-quote" id="random-quote">
+        "You're the reason I believe in beautiful things ✨"
+      </div>
     </div>
-    <div class="cat" id="cat2">
-      <img src="kucing1.jpg" alt="cat2">
+  </div>
+
+  <!-- Main Chat Screen -->
+  <div id="chat-screen" class="screen">
+    <!-- Background Elements -->
+    <div class="background-elements">
+      <div class="stars" id="stars-container"></div>
+      <div class="floating-hearts"></div>
+      <div class="moon">🌙</div>
     </div>
-    <div class="cat" id="cat3">
-      <img src="kucing2.jpeg" alt="cat3">
+
+    <!-- Main UI -->
+    <div class="ui">
+      <div class="card fade" id="card">
+        <div class="header">
+          <div class="chibi-img">
+            <img src="ayes.jpg" alt="My Love">
+          </div>
+          <div class="meta">
+            <div class="chibi-name">Dear Ayera</div>
+            <div class="chibi-speech" id="chibi-speech">My Beloved</div>
+          </div>
+        </div>
+
+        <div class="main">
+          <h1 id="title">From Amrun</h1>
+          <div class="typing" id="text">Halo bocil..</div>
+        </div>
+
+        <div class="choices" id="choices"></div>
+
+        <div class="controls">
+          <button id="back-to-start" class="muted">🏠 Back</button>
+          <button id="restart" class="muted hidden">🔄 Replay</button>
+        </div>
+      </div>  
     </div>
-    <div class="cat" id="cat4">
-      <img src="kucing3.jpg" alt="cat4">
-    </div>  
+
+    <!-- Multiple Cats dengan efek baru -->
+    <div class="cat-container">
+      <div class="cat" id="cat1" data-sound="1">
+        <img src="kucing4.png" alt="cat1">
+        <div class="cat-name">Mochi</div>
+      </div>
+      <div class="cat" id="cat2" data-sound="2">
+        <img src="kucing1.jpg" alt="cat2">
+        <div class="cat-name">Luna</div>
+      </div>
+      <div class="cat" id="cat3" data-sound="3">
+        <img src="kucing2.jpeg" alt="cat3">
+        <div class="cat-name">Simba</div>
+      </div>
+      <div class="cat" id="cat4" data-sound="4">
+        <img src="kucing3.jpg" alt="cat4">
+        <div class="cat-name">Coco</div>
+      </div>
+    </div>
+
+    <!-- Music Control (Volume dihapus) -->
+    <div class="music-controls">
+      <button id="music-toggle" class="music-btn">🎵</button>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <button id="theme-btn">🌙</button>
+    </div>
   </div>
 
   <!-- Audio Elements -->
-  <audio id="bg-music" loop></audio>
+  <audio id="bg-music" loop>
+    <source src="katawaredoki.mp3" type="audio/mp3">
+  </audio>
   <audio id="click-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
-  <audio id="meow-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-cat-meow-1056.mp3"></audio>
+  <audio id="meow-sound1" src="cat-meow-401729.mp3"></audio>
+  <audio id="meow-sound2" src="cat-meow-99835.mp3"></audio>
+  <audio id="meow-sound3" src="cat-meow-6226.mp3"></audio>
+  <audio id="meow-sound4" src="cat-meow-81626.mp3"></audio>
+  <audio id="star-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-magic-sparkle-sound-3091.mp3"></audio>
 
   <script src="index.js"></script>
 </body>
